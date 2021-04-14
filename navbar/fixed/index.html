@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./style.css"  rel="stylesheet"/>
+  <title>Fixed Menu</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="css-brand">BRAND ICON</a>
+      <button class="css-btn-menu js__menu-btn" type="button" >
+        <div class="css__menu"></div>
+      </button>
+      <div class="css-container-menu js__menu-container">        
+        <form>
+          <input type="text" placeholder="search" />
+          <button type="button">SEARCH</button>
+        </form>
+        <ul>
+          <li><a>Item 01</a></li>
+          <li><a>Item 02</a></li>
+          <li>
+            <a class="css-toggle-dropdown" onclick="dropdown(this)" role="button">Item 03</a>
+            <ul class="css-dropdown" id="js-dropdown">
+              <li><a>SubItem 01</a></li>
+              <li><a>SubItem 01</a></li>
+              <li><a>SubItem 01</a></li>
+              <li><a>SubItem 01</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <article>
+    aa
+  </article>
+
+
+
+</body>
+</html>
+<script>
+//dois jeitos de toogle uma variavel 
+function dropdown(target) {
+  var element = document.getElementById("js-dropdown");
+  element.classList.toggle("d-flex");
+  target.classList.toggle("actived");
+  console.log(target)
+}
+
+const menuBtn = document.querySelector('.js__menu-btn')
+const menuMobile = document.querySelector('.js__menu-container')
+let menuOpen = false
+menuBtn.addEventListener('click', () => {
+  if(!menuOpen){
+    menuBtn.classList.add('open')
+    menuMobile.classList.add('show')
+    menuOpen = true
+  } else {
+    menuBtn.classList.remove('open')
+    menuMobile.classList.remove('show')
+    menuOpen = false
+  }
+})
+</script>

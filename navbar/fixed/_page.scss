@@ -1,0 +1,30 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {height:100%;} 
+
+body {
+  padding-top: 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+article {
+  background: white;
+  width: 100%;
+  height: 100vh;
+}
+
+.d-flex {
+  display: flex!important;
+}
+
+
+.actived {
+  background: orange;
+}
